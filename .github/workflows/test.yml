@@ -6,7 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-24.04-arm
     steps:
-      - name: Install QEMU Dependencies
+      - name: start test
         run: |
           wget "https://d900.dailyuploads.net/d/xucdgjjxofuuxiqnbrflghy7i6fzg7jtdlv2hgwsnhlspuroi5nhppoqsgmd7g55g72gnxazfmxxfci/L'age.De.Glace.La_Grande.Chasse.Aux.Oeufs.2016.TrueFrench.HDRip.XviD.Wawacity.blue-Wawacity.GRATIS.avi"
           sudo apt install ffmpeg
