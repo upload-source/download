@@ -1,0 +1,19 @@
+name: Test download
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Install QEMU Dependencies
+        run: |
+          wget "https://d900.dailyuploads.net/d/xucdgjjxofuuxiqnbrflghy7i6fzg7jtdlv2hgwsnhlspuroi5nhppoqsgmd7g55g72gnxazfmxxfci/L'age.De.Glace.La_Grande.Chasse.Aux.Oeufs.2016.TrueFrench.HDRip.XviD.Wawacity.blue-Wawacity.GRATIS.avi"
+          sudo apt install ffmpeg
+          ffmpeg -i *.avi -c:v libx264 -c:a aac -preset fast test.mp4
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: qemu-build
+          path: qemu.zip
+          if-no-files-found: error        
