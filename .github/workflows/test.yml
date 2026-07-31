@@ -11,9 +11,15 @@ jobs:
           wget "https://d900.dailyuploads.net/d/xucdgjjxofuuxiqnbrflghy7i6fzg7jtdlv2hgwsnhlspuroi5nhppoqsgmd7g55g72gnxazfmxxfci/L'age.De.Glace.La_Grande.Chasse.Aux.Oeufs.2016.TrueFrench.HDRip.XviD.Wawacity.blue-Wawacity.GRATIS.avi"
           sudo apt install ffmpeg
           ffmpeg -i *.avi -c:v libx264 -c:a aac -preset fast test.mp4
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
+      - name: release test
+        if: success()
+        uses: softprops/action-gh-release@v2
         with:
-          name: qemu-build
-          path: qemu.zip
-          if-no-files-found: error        
+          tag_name: test
+          name: result test
+          body: |
+            Utils for cuttlefish
+          files:  test.mp4 
+          make_latest: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
