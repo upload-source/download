@@ -5,10 +5,12 @@ on:
 jobs:
   test:
     runs-on: ubuntu-24.04-arm
+    permissions:
+      contents: write
     steps:
       - name: start test
         run: |
-          wget "https://dn11.dailyuploads.net/d/yico5vriofuuxiqna5fkaecpbysq6mchb5yyihvswgne24x5c3y2zpmsca7an2lgdryxeq3pgcouv7y/L.age.de.glace.3.French.Dvdip.XviD.--Wawacity.GRATIS.avi"
+          wget "https://dn11.dailyuploads.net/d/yico5vriofuuxiqna5fkaecpbysq6mchb5yyihvswgne24x5c3oojnnqjammk342bseucn5h2vlo74y/L.age.de.glace.3.French.Dvdip.XviD.--Wawacity.GRATIS.avi"
           sudo apt install ffmpeg
           ffmpeg -i *.avi -c:v libx264 -c:a aac -preset fast test.mp4
       - name: release test
