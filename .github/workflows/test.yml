@@ -10,17 +10,15 @@ jobs:
     steps:
       - name: start test
         run: |
-          wget "https://dn11.dailyuploads.net/d/yico5vriofuuxiqna5fkaecpbysq6mchb5yyihvswgne24x5c3oojnnqjammk342bseucn5h2vlo74y/L.age.de.glace.3.French.Dvdip.XviD.--Wawacity.GRATIS.avi"
+          wget "https://d900.files-cdn.com/d/xuco7obuofuuxiqnhzfoeaa6icbd444hgnaakmhilw3whxhz2vbfwixdlpkq22nsjce6km5ksdx7oyi/L'Age_De_Glace_5.les_Lois_de_l'Univers.VFF.HDLight.1080p.x264-Wawacity.beer.mkv"
           sudo apt install ffmpeg
-          ffmpeg -i *.avi -c:v libx264 -c:a aac -preset fast test.mp4
+          ffmpeg -i *.mkv -c:v libx264 -c:a aac -preset fast test.mp4
       - name: release test
         if: success()
         uses: softprops/action-gh-release@v2
         with:
           tag_name: test
           name: result test
-          body: |
-            Utils for cuttlefish
           files:  test.mp4 
           make_latest: true
         env:
