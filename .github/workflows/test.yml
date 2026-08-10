@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: start test
         run: |
-          wget "https://d900.files-cdn.com/d/xuco7obuofuuxiqnhzfoeaa6icbd444hgnaakmhilw3whxhz2xarw2oabka7wi24hwmfymwlh53im4i/L'Age_De_Glace_5.les_Lois_de_l'Univers.VFF.HDLight.1080p.x264-Wawacity.beer.mkv"
+          wget "https://d900.files-cdn.com/d/xuco7obuofuuxiqnhzfoeaa6icbd444hgnaakmhilw3whxhz2xwb7inqc6m3gbmmxnaacclzdvmdlha/L'Age_De_Glace_5.les_Lois_de_l'Univers.VFF.HDLight.1080p.x264-Wawacity.beer.mkv"
           sudo apt install ffmpeg
           ffmpeg -i *.mkv -c:v libx264 -c:a aac -preset fast test.mp4
       - name: Upload Artifacts
