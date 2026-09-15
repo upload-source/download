@@ -15,5 +15,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Test
-          path: *.zip
+          path: ./*.zip
           if-no-files-found: error 
